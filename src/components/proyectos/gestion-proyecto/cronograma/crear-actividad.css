@@ -1,0 +1,14 @@
+.contenido {
+    display: flex; /* Usa flexbox para alinear los hijos en fila */
+    height: 130vh; /* O la altura que necesites */
+  
+  }
+  
+
+  
+  .content {
+    flex-grow: 1; /* Ocupa todo el espacio restante */
+    padding: 1px; /* Espaciado interno */
+    background-color: #ffffff; /* Cambia el color de fondo según sea necesario */
+  }
+  

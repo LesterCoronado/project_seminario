@@ -1,0 +1,52 @@
+.navbar-menu {
+  width: 125px;
+  background-color: #0d0d0dea;
+  color: white;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+ul {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 6px;
+  width: 90%;
+  border-radius: 5px;
+}
+
+a:hover {
+  background-color: rgba(128, 128, 128, 0.58);
+  color: white;
+}
+
+.active {
+  text-align: center;
+  background-color:  rgba(128, 128, 128, 0.58);
+  color: rgb(255, 255, 255);
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 0.25rem;
+}
+Link{
+  
+    color: inherit; /* Hereda el color del padre o lo puedes definir */
+    text-decoration: none; /* Elimina la línea debajo */
+  
+  
+}
+
+.m {
+  background-color: rgba(128, 128, 128, 0.58);
+  color: white;
+}
+
+.mm {
+  color: gray; /* Color cuando no está activo */
+  text-decoration: underline; /* Subrayado cuando no está activo */
+}

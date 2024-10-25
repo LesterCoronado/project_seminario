@@ -1,0 +1,20 @@
+.contenido
+{
+   
+    min-height: 100vh;
+    height: max-content;
+}
+  
+
+  
+  .content {
+    background-color: aliceblue;
+    height: max-content;
+    flex-grow: 1; /* Ocupa todo el espacio restante */
+    padding: 20px; /* Espaciado interno */
+  }
+  
+
+  .card{
+    background-color: aliceblue;
+  }

@@ -1,0 +1,60 @@
+.navbar-menu {
+ color: white;
+  background-color: #2D3748; /* Ajusta el color de fondo según sea necesario */
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column; /* Mantén el alineamiento vertical por defecto */
+  align-items: center; /* Centra los elementos horizontalmente */
+}
+
+.burger {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.burger .bi {
+  cursor: pointer;
+}
+
+.navbar__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Mantén la alineación vertical de los elementos de la lista */
+  align-items: center; /* Centra los elementos horizontalmente */
+}
+
+.navbar__li-box {
+  display: flex;
+  align-items: center;
+  margin-top: 15px; /* Espacio entre elementos */
+}
+
+.navbar__li {
+  display: inline-block;
+  padding-left: 12px;
+  font-size: 16px;
+  color: #000000;
+  font-family: "Lato", sans-serif; /* Asegúrate de que "Lato" esté disponible */
+  font-weight: 400;
+}
+
+.navbar__li-box i {
+  font-size: 24px; /* Ajusta el tamaño del icono según sea necesario */
+}
+
+.navbar__li-box .navbar__li {
+  display: inline-block;
+  margin-left: 10px; /* Ajusta el margen según sea necesario */
+}
+
+.navegacion{
+  font-size: 50px;
+}
+
+li{
+  padding: 5px;
+  
+}

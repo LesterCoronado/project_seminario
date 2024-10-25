@@ -1,0 +1,66 @@
+.wallper {
+  background-image: url("https://wallpapers.com/images/high/project-management-doodle-pattern-64jq06zvvbe0j666.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto; /* Altura automática según el contenido */
+  min-height: 100vh; /* Asegura que al menos cubra la pantalla completa */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-responsive {
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+@media (max-width: 768px) {
+  .wallper {
+    background-image: url("https://wallpapers.com/images/high/project-management-doodle-pattern-64jq06zvvbe0j666.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto; /* Altura automática según el contenido */
+    min-height: 90vh; /* Asegura que al menos cubra la pantalla completa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .password-responsive {
+    width: 100%; /* Ocupar el 100% del ancho del contenedor en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 576px) {
+  .wallper {
+    background-image: url("https://wallpapers.com/images/high/project-management-doodle-pattern-64jq06zvvbe0j666.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto; /* Altura automática según el contenido */
+    min-height: 88vh; /* Asegura que al menos cubra la pantalla completa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .password-responsive {
+    width: 100%; /* Asegura que también ocupe todo el ancho en dispositivos muy pequeños */
+  }
+}
+@media (width: 430px) {
+  .wallper {
+    background-image: url("https://wallpapers.com/images/high/project-management-doodle-pattern-64jq06zvvbe0j666.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto; /* Altura automática según el contenido */
+    min-height: 89vh; /* Asegura que al menos cubra la pantalla completa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .password-responsive {
+    width: 100%; /* Asegura que también ocupe todo el ancho en dispositivos muy pequeños */
+  }
+}
+

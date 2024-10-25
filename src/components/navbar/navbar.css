@@ -1,0 +1,19 @@
+.nav-link-custom {
+    color: inherit; /* Hereda el color del elemento padre */
+    text-decoration: none; /* Elimina el subrayado */
+  }
+
+  a{
+    cursor: pointer;
+  }
+  .btn-full-width {
+    width: 10%;
+    margin-left: 1em;
+  }
+  .logo{
+    width: 30%;
+    padding: 5px;
+    margin-top: 8px;
+  }
+ 
+  

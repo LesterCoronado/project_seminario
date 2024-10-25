@@ -1,0 +1,14 @@
+.carrousel{
+    background-color: var(--surface-ground)!important;
+    border-style: dashed !important;
+    border-radius: var(--border-radius)!important;
+    border-width: 2px;
+    border-color: var(--surface-border)!important;
+}
+.content{
+    margin:15px;
+    border-style: dashed !important;
+    border-radius: var(--border-radius)!important;
+    border-width: 2px;
+    border-color: var(--surface-border)!important;
+}

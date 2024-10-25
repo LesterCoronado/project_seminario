@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Button } from "primereact/button";
-import "./Login.css"; // Asegúrate de que tienes este archivo CSS
+import "./login.css"; // Asegúrate de que tienes este archivo CSS
 import { InputText } from "primereact/inputtext";
 import "primeflex/primeflex.css";
 import { Checkbox } from "primereact/checkbox";

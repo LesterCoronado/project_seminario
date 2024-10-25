@@ -64,8 +64,7 @@ function ResetPassword() {
         setRedirect(true);
       } catch (error: any) {
         if (
-          error.response.data.mensaje ==
-          "El token ha expirado. Por favor, solicite uno nuevo."
+          error.status == 403
         ) {
           toast.current?.show({
             severity: "error",

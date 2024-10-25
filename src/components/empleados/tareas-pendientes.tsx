@@ -98,16 +98,37 @@ function TareasPendientes() {
       <h1 className="text-center mt-3 mb-3 fw-bold text-muted">
         Mis Tareas Asignadas
       </h1>
-      <div className="tareas-container">
-        <Carousel
-          value={tareas}
-          numVisible={3}
-          numScroll={3}
-          responsiveOptions={responsiveOptions}
-          autoplayInterval={15000}
-          itemTemplate={taskTemplate}
-        />
-      </div>
+      {/* si no hay tareas Asignadas */}
+      {tareas.length === 0 && (
+        <div className="text-center mt-5">
+          <Avatar
+            icon="pi pi-folder"
+            size="xlarge"
+            shape="circle"
+            className="p-m-2"
+          />
+          <h2 className="text-muted">No hay tareas asignadas</h2>
+          <Button
+            label="Refrescar"
+            icon="pi pi-refresh"
+            className="p-button-raised p-button-text mt-3 mb-5"
+            onClick={fecthTasks}
+          />
+        </div>
+      )}
+     {/* si hay tareas Asignadas */}
+      {tareas.length > 0 && (
+         <div className="tareas-container">
+         <Carousel
+           value={tareas}
+           numVisible={3}
+           numScroll={3}
+           responsiveOptions={responsiveOptions}
+           autoplayInterval={15000}
+           itemTemplate={taskTemplate}
+         />
+       </div>
+      )}
     </div>
   );
 }

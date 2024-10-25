@@ -37,6 +37,7 @@ const CrearUsuario = (props: any) => {
   const [roles, setRoles] = useState<Rol[]>([]);
   const [showPasswordField, setShowPasswordField] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   const [formData, setFormData] = useState<Usuario>({
     idUsuario: 0,
@@ -59,6 +60,7 @@ const CrearUsuario = (props: any) => {
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    setLoader(true);
     event.preventDefault();
     event.stopPropagation();
 
@@ -87,11 +89,13 @@ const CrearUsuario = (props: any) => {
 
       console.log("Respuesta del servidor:", response);
       notificationService.sendEquipo(true);
+      setLoader(false);
       Show_Alerta(
         `Usuario ${props.IdUsuario === 0 ? "creado" : "editado"} con éxito`,
         "success"
       );
     } catch (error) {
+      setLoader(false);
       console.error("Error al enviar datos:", error);
       alert(
         `Hubo un error al ${
@@ -306,8 +310,14 @@ const CrearUsuario = (props: any) => {
         </Row>
 
         <div className="d-grid gap-2 mt-3">
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit"
+            disabled={loader}
+          >
             {props.IdUsuario === 0 ? "Crear Usuario" : "Editar Usuario"}
+            {loader && (
+              <div className="spinner-border spinner-border-sm text-light ms-2"  role="status">
+               
+                </div>)}
           </Button>
         </div>
       </Form>

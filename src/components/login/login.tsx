@@ -34,7 +34,7 @@ function Login() {
         email: email,
         password: password,
       };
-
+      console.log("json:", json); 
       try {
         const data = await apiService.login(
           `http://localhost:4000/login`,

@@ -57,7 +57,7 @@ export const CrearActividad = (props: any) => {
       );
       setActividades(data);
     } catch (error) {
-      console.error("Error al obtener los hitos:", error);
+      
     }
   };
 
@@ -69,7 +69,7 @@ export const CrearActividad = (props: any) => {
       const data: Actividad = await apiService.get(
         `https://sp-backend-production.up.railway.app/actividad/${props.idActividad}`
       );
-      console.log("Actividad:", data);
+      
       setFormData({
         idActividad: data.idActividad,
         idDependencia: data.idDependencia,
@@ -84,7 +84,7 @@ export const CrearActividad = (props: any) => {
         // Actualizamos isMilestone si el tipo de la actividad es "milestone"
     setIsMilestone(data.tipo === "milestone");
     } catch (error) {
-      console.error("Error al obtener la actividad:", error);
+      
     }
   };
 
@@ -113,8 +113,8 @@ export const CrearActividad = (props: any) => {
         notificationService.sendActividad(true);
         Show_Alerta("Actividad creada con éxito", "success");
       } catch (error) {
-        console.log(finalData);
-        console.error("Error al enviar datos:", error);
+        
+        
         Show_Alerta(
           "Hubo un error al crear actividad, intente nuevamente",
           "error"
@@ -129,7 +129,7 @@ export const CrearActividad = (props: any) => {
         notificationService.sendActividad(true);
         Show_Alerta("Actividad actualizada con éxito", "success");
       } catch (error) {
-        console.error("Error al enviar datos:", error);
+        
         Show_Alerta(
           "Hubo un error al actualizar actividad, intente nuevamente",
           "error"
@@ -158,15 +158,15 @@ export const CrearActividad = (props: any) => {
       });
       setMiembros(miembrosList);
     } catch (error) {
-      console.error("Error al obtener los miembros del equipo:", error);
+      
     }
   };
 
   useEffect(() => {
     if (props.idActividad === 0) {
-      console.log("CREANDO");
+      
     } else {
-      console.log("EDITANDO");
+      
       fetchActividad();
     }
     fetchMiembrosEquipos();

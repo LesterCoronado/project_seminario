@@ -30,7 +30,7 @@ export const CrearProyectos = (props: any) => {
       const data: Proyecto = await apiService.get(
         `https://sp-backend-production.up.railway.app/proyectos/${props.idProyecto}`
       );
-      console.log("Proyecto:", data);
+      
 
       setFormData({
         Nombre: data.Nombre,
@@ -51,7 +51,7 @@ export const CrearProyectos = (props: any) => {
         data.metodologia === "other" ? data.metodologia : ""
       );
     } catch (error) {
-      console.error("Error al obtener el proyecto:", error);
+      
     }
   };
 
@@ -63,7 +63,7 @@ export const CrearProyectos = (props: any) => {
       );
       setClientes(data);
     } catch (error) {
-      console.error("Error al obtener los clientes:", error);
+      
     }
   };
 
@@ -120,11 +120,11 @@ export const CrearProyectos = (props: any) => {
           "https://sp-backend-production.up.railway.app/proyectos",
           finalData
         );
-        console.log("Respuesta del servidor:", response);
+        
         notificationService.sendNotification(true);
         Show_Alerta("Proyecto creado con éxito", "success");
       } catch (error) {
-        console.error("Error al enviar datos:", error);
+        
         alert("Hubo un error al crear el proyecto.");
       }
     } else {
@@ -133,11 +133,11 @@ export const CrearProyectos = (props: any) => {
           `https://sp-backend-production.up.railway.app/proyectos/${props.idProyecto}`,
           finalData
         );
-        console.log("Respuesta del servidor:", response);
+        
         notificationService.sendNotification(true);
         Show_Alerta("Proyecto editado con éxito", "success");
       } catch (error) {
-        console.error("Error al enviar datos:", error);
+        
         alert("Hubo un error al editar el proyecto.");
       }
       setValidated(true);
@@ -177,9 +177,9 @@ export const CrearProyectos = (props: any) => {
   useEffect(() => {
     fetchClientes();
     if (props.idProyecto === 0) {
-      console.log("CREANDO");
+      
     } else {
-      console.log("EDITANDO");
+      
       fetchProyectos();
     }
   }, [props.idProyecto]);

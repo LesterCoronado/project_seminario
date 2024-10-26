@@ -43,7 +43,7 @@ function ListarPruebas() {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    console.log(isAuthenticated);
+    
     return <div>No tienes acceso a este contenido.</div>;
   }
   const params = useParams();
@@ -89,8 +89,7 @@ function ListarPruebas() {
       setPruebas(pruebas.filter((prueba) => prueba.idPrueba !== idPrueba));
       Show_Alerta("Prueba eliminada correctamente", "success");
     } catch (error) {
-      console.error("Error al eliminar la prueba:", error);
-      Show_Alerta("Error al eliminar la prueba", "error");
+            Show_Alerta("Error al eliminar la prueba", "error");
     }
   };
 
@@ -102,8 +101,7 @@ function ListarPruebas() {
       setPruebas(data);
     } catch (error) {
       setError("Error al obtener las pruebas.");
-      console.error("Error al obtener las pruebas:", error);
-    } finally {
+          } finally {
       setLoading(false);
     }
   };
@@ -157,8 +155,7 @@ function ListarPruebas() {
         return log; // Devuelve el log tal cual si no es base64
       }
     } catch (error) {
-      console.error("Error al decodificar el log:", error);
-      return "Error al decodificar el log.";
+            return "Error al decodificar el log.";
     }
   };
 

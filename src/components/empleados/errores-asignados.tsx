@@ -39,7 +39,7 @@ function ErroresAsignados() {
   const token: any = Cookies.get("token");
   const decoded: any = jwtDecode(token);
   IdResponsable = decoded.idMiembroEquipo;
-  console.log("IdResponsable", IdResponsable);
+  
   const params = useParams();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedPrueba, setSelectedPrueba] = useState<Errores | null>(null);
@@ -83,7 +83,7 @@ function ErroresAsignados() {
       setErrores(errores.filter((error) => error.idError !== IdError));
       Show_Alerta("Error eliminado correctamente", "success");
     } catch (error) {
-      console.error("Error al eliminar la error:", error);
+      
       Show_Alerta("Error al eliminar la error", "error");
     }
   };
@@ -96,7 +96,7 @@ function ErroresAsignados() {
       setErrores(data);
     } catch (error) {
       setError("Error al obtener las errores.");
-      console.error("Error al obtener las errores:", error);
+      
     } finally {
       setLoading(false);
     }
@@ -158,7 +158,7 @@ function ErroresAsignados() {
         return log; // Devuelve el log tal cual si no es base64
       }
     } catch (error) {
-      console.error("Error al decodificar el log:", error);
+      
       return "Error al decodificar el log.";
     }
   };

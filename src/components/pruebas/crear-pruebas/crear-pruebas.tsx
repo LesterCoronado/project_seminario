@@ -137,16 +137,16 @@ export const CrearPrueba = (props: any) => {
     }
 
     try {
-        console.log("Form data:", dataToSubmit);
+        
         const endpoint = props.idPrueba === 0 ? "pruebas" : `pruebas/${props.idPrueba}`;
         const method = props.idPrueba === 0 ? apiService.post : apiService.update;
         const response = await method(`https://sp-backend-production.up.railway.app/${endpoint}`, dataToSubmit);
 
-        console.log("Respuesta del servidor:", response);
+        
         notificationService.sendPrueba(true);
         Show_Alerta(`Prueba ${props.idPrueba === 0 ? "creada" : "editada"} con éxito`, "success");
     } catch (error) {
-        console.error("Error al enviar datos:", error);
+        
         alert(`Hubo un error al ${props.idPrueba === 0 ? "crear" : "editar"} la prueba.`);
     }
     setValidated(true);
@@ -158,7 +158,7 @@ export const CrearPrueba = (props: any) => {
       const data: Prueba = await apiService.get(
         `https://sp-backend-production.up.railway.app/prueba/${props.idPrueba}`
       );
-      console.log("Prueba:", data);
+      
 
       setFormData({
         ...formData,
@@ -181,7 +181,7 @@ export const CrearPrueba = (props: any) => {
         setLogFileName("Archivo de log cargado");
       }
     } catch (error) {
-      console.error("Error al obtener la prueba:", error);
+      
     }
   };
 

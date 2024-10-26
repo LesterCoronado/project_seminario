@@ -70,7 +70,7 @@ function ListarClientes() {
   const handleShowEditar = (id: number) => {
     setShowEditar(true);
     IdCliente = id;
-    console.log("IdCliente:", IdCliente);
+    
   };
   const handleDeleteCliente = (IdCliente: number) => {
     confirmDialog({
@@ -93,7 +93,7 @@ function ListarClientes() {
       );
       Show_Alerta("cliente eliminado correctamente", "success");
     } catch (error) {
-      console.error("Error al eliminar el cliente:", error);
+      
       Show_Alerta(
         "Error al eliminar el cliente, compruebe que no tenga proyectos asignados o intentelo nuevamente",
         "error"
@@ -105,9 +105,9 @@ function ListarClientes() {
     try {
       const data = await apiService.get(`https://sp-backend-production.up.railway.app/clientes`);
       setClientes(data);
-      console.log("Clientes:", data);
+      
     } catch (error) {
-      console.error("Error al obtener los equipos:", error);
+      
     } finally {
       setLoading(false);
     }

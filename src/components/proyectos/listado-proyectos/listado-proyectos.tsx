@@ -113,7 +113,7 @@ function Proyectos() {
         animateProgress(proyecto.idProyecto, proyecto.progreso);
       });
     } catch (error) {
-      console.error("Error al obtener los proyectos:", error);
+      
     }
   };
 
@@ -125,9 +125,9 @@ function Proyectos() {
         `https://sp-backend-production.up.railway.app/equipo-proyecto/${id}`
       );
       setEquipos(data);
-      console.log(data);
+      
     } catch (error) {
-      console.error("Error al obtener los proyectos:", error);
+      
     }
   };
 

@@ -132,7 +132,7 @@ const EditarError = (props: any) => {
       dataToSubmit.evidencia !== undefined && dataToSubmit.evidencia !== null;
 
     try {
-      console.log("Form data:", dataToSubmit);
+      
       const endpoint =
         props.IdError === 0 ? "errores" : `errores/${props.IdError}`;
       const method = props.IdError === 0 ? apiService.post : apiService.update;
@@ -141,15 +141,15 @@ const EditarError = (props: any) => {
         dataToSubmit
       );
 
-      console.log("Respuesta del servidor:", response);
+      
       notificationService.sendError(true);
       Show_Alerta(
         `Error ${props.IdError === 0 ? "creado" : "editado"} con éxito`,
         "success"
       );
     } catch (error) {
-      console.log("Form data1:", dataToSubmit);
-      console.error("Error al enviar datos:", error);
+      
+      
       alert(
         `Hubo un error al ${props.IdError === 0 ? "crear" : "editar"} el error.`
       );
@@ -162,9 +162,9 @@ const EditarError = (props: any) => {
       const data: Error = await apiService.get(
         `https://sp-backend-production.up.railway.app/error2/${props.IdError}`
       );
-      console.log("Prueba:", data);
+      
 
-      console.log("idProyecto:", data.idProyecto);
+      
       setFormData({
         ...formData,
         idError: data.idError,
@@ -186,7 +186,7 @@ const EditarError = (props: any) => {
         setPreviewImage(data.evidencia);
       }
     } catch (error) {
-      console.error("Error al obtener el error:", error);
+      
     }
   };
   // Función para obtener los miembros de los equipos del proyecto
@@ -207,7 +207,7 @@ const EditarError = (props: any) => {
       });
       setMiembros(miembrosList);
     } catch (error) {
-      console.error("Error al obtener los miembros del equipo:", error);
+      
     }
   };
   const fetchPruebas = async () => {
@@ -217,7 +217,7 @@ const EditarError = (props: any) => {
       );
       setPruebas(data);
     } catch (error) {
-      console.error("Error al obtener las pruebas:", error);
+      
     }
   };
 

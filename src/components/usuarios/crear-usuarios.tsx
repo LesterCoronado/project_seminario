@@ -77,7 +77,7 @@ const CrearUsuario = (props: any) => {
     }
 
     try {
-      console.log("Form data:", dataToSubmit);
+      
       const endpoint =
         props.IdUsuario === 0 ? "createuser" : `edituser/${props.IdUsuario}`;
       const method =
@@ -87,7 +87,7 @@ const CrearUsuario = (props: any) => {
         dataToSubmit
       );
 
-      console.log("Respuesta del servidor:", response);
+      
       notificationService.sendEquipo(true);
       setLoader(false);
       Show_Alerta(
@@ -96,7 +96,7 @@ const CrearUsuario = (props: any) => {
       );
     } catch (error) {
       setLoader(false);
-      console.error("Error al enviar datos:", error);
+      
       alert(
         `Hubo un error al ${
           props.IdUsuario === 0 ? "crear" : "editar"
@@ -109,18 +109,18 @@ const CrearUsuario = (props: any) => {
     try {
       const data = await apiService.get(`https://sp-backend-production.up.railway.app/roles`);
       setRoles(data);
-      console.log("Roles:", data);
+      
     } catch (error) {
-      console.error("Error al obtener los roles:", error);
+      
     }
   };
   const fetchUsuarioById = async () => {
-    console.log("Id del cliente2:", props);
+    
     try {
       const data: Usuario = await apiService.get(
         `https://sp-backend-production.up.railway.app/user/${props.IdUsuario}`
       );
-      console.log("Usuario:", data);
+      
       setFormData({
         ...formData,
         idUsuario: data.idUsuario,
@@ -133,7 +133,7 @@ const CrearUsuario = (props: any) => {
         estado: data.estado === null ? false : data.estado,
       });
     } catch (error) {
-      console.error("Error al obtener el error:", error);
+      
     }
   };
 

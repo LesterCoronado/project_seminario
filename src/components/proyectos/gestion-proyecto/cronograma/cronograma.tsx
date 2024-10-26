@@ -92,7 +92,7 @@ export const Cronograma = () => {
       fetchHitos(); // Volver a obtener las tareas
       Show_Alerta("Actividad eliminada con éxito", "success");
     } catch (error) {
-      console.error("Error al eliminar la actividad:", error);
+      
       Show_Alerta("Error al eliminar la actividad", "error");
     }
   };
@@ -150,7 +150,7 @@ export const Cronograma = () => {
 
       setTasks(mappedTasks);
     } catch (error) {
-      console.error("Error al obtener los hitos:", error);
+      
     }
   };
 
@@ -173,7 +173,7 @@ export const Cronograma = () => {
         handleShowEditar();
       }
     } else {
-      console.log("No hay tarea seleccionada o no tiene un ID válido.");
+      
     }
   };
 

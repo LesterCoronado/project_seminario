@@ -37,7 +37,6 @@ export const InfoProyecto = () => {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    console.log(isAuthenticated);
     return <div>No tienes acceso a este contenido.</div>;
   }
   const params = useParams();
@@ -66,9 +65,7 @@ export const InfoProyecto = () => {
       );
       setFormData(data);
       sessionStorage.setItem("project", data.Nombre);
-    } catch (error) {
-      console.error("Error al obtener el proyecto:", error);
-    }
+    } catch (error) {}
   };
 
   const fetchEquipos = async (id: any) => {
@@ -78,9 +75,7 @@ export const InfoProyecto = () => {
         `https://sp-backend-production.up.railway.app/equipo-proyecto/${id}`
       );
       setEquipos(data);
-    } catch (error) {
-      console.error("Error al obtener los proyectos:", error);
-    }
+    } catch (error) {}
   };
   //para obtener las iniciales de un nombre
   const getInitials = (nombre: any) => {

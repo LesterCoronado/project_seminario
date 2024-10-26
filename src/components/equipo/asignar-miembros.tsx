@@ -44,7 +44,7 @@ export const AsignarMiembros = (props: any) => {
       );
       setEquipos(data);
     } catch (error) {
-      console.error("Error al obtener los proyectos:", error);
+      
     }
   };
 
@@ -55,7 +55,7 @@ export const AsignarMiembros = (props: any) => {
       );
       setUsuarios(data);
     } catch (error) {
-      console.error("Error al obtener los usuarios:", error);
+      
     }
   };
 
@@ -79,7 +79,7 @@ export const AsignarMiembros = (props: any) => {
         "https://sp-backend-production.up.railway.app/miembroequipo",
         finalData
       );
-      console.log("Respuesta del servidor:", response);
+      
       notificationService.sendAsignacionRecurso(true);
       Show_Alerta("Usuario asignado con éxito", "success");
     } catch (error: any) {
@@ -103,7 +103,7 @@ export const AsignarMiembros = (props: any) => {
         const response = await apiService.delete(
           `https://sp-backend-production.up.railway.app/miembroequipo/${idEquipo}/${idUsuario}`
         );
-        console.log("Respuesta del servidor:", response);
+        
         Show_Alerta("Usuario desasignado con éxito", "success");
         notificationService.sendAsignacionRecurso(true);
       } catch (error: any) {
@@ -113,7 +113,7 @@ export const AsignarMiembros = (props: any) => {
         ) {
           Show_Alerta("No se encontró la relación de usuario con el equipo.", "info");
         } else {
-          console.error("Error al desasignar el recurso:", error);
+          
         }
       }
     }

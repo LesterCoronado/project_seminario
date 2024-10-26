@@ -35,7 +35,7 @@ function ListarUsuarios() {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    console.log(isAuthenticated);
+    
     return <div>No tienes acceso a este contenido.</div>;
   }
   const params = useParams();
@@ -68,7 +68,7 @@ function ListarUsuarios() {
   const handleShowEditar = (id: number) => {
     setShowEditar(true);
     IdUsuario = id;
-    console.log("IdUsuario:", IdUsuario);
+    
   };
   const handleDeleteUsuario = (IdUsuario: number) => {
     confirmDialog({
@@ -91,7 +91,7 @@ function ListarUsuarios() {
       );
       Show_Alerta("usuario eliminado correctamente", "success");
     } catch (error) {
-      console.error("Error al eliminar el usuario:", error);
+      
       Show_Alerta(
         "Error al eliminar el usuario, compruebe que no tenga proyectos asignados o intentelo nuevamente",
         "error"
@@ -103,9 +103,9 @@ function ListarUsuarios() {
     try {
       const data = await apiService.get(`https://sp-backend-production.up.railway.app/allusers`);
       setUsuarios(data);
-      console.log("usuarios:", data);
+      
     } catch (error) {
-      console.error("Error al obtener los usuarios:", error);
+      
     } finally {
       setLoading(false);
     }

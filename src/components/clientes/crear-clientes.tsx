@@ -63,7 +63,7 @@ const CrearCliente = (props: any) => {
     }
 
     try {
-      console.log("Form data:", dataToSubmit);
+      
       const endpoint =
         props.IdCliente === 0 ? "clientes" : `clientes/${props.IdCliente}`;
       const method =
@@ -73,14 +73,14 @@ const CrearCliente = (props: any) => {
         dataToSubmit
       );
 
-      console.log("Respuesta del servidor:", response);
+      
       notificationService.sendEquipo(true);
       Show_Alerta(
         `Error ${props.IdCliente === 0 ? "creado" : "editado"} con éxito`,
         "success"
       );
     } catch (error) {
-      console.error("Error al enviar datos:", error);
+      
       alert(
         `Hubo un error al ${
           props.IdCliente === 0 ? "crear" : "editar"
@@ -91,12 +91,12 @@ const CrearCliente = (props: any) => {
   };
 
   const fetchClienteById = async () => {
-    console.log("Id del cliente2:", props);
+    
     try {
       const data: Cliente = await apiService.get(
         `https://sp-backend-production.up.railway.app/cliente/${props.IdCliente}`
       );
-      console.log("Cliente:", data);
+      
 
       setFormData({
         ...formData,
@@ -110,7 +110,7 @@ const CrearCliente = (props: any) => {
         estado: data.estado,
       });
     } catch (error) {
-      console.error("Error al obtener el error:", error);
+      
     }
   };
 

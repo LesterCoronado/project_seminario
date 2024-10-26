@@ -34,13 +34,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
       // Verificar si decoded.exp está definido
       if (decoded.exp === undefined) {
-        console.warn("El token no contiene la propiedad exp.");
+        
         return true; // Asumimos que el token es inválido si no hay exp
       }
 
       return decoded.exp < currentTime; // Compara la fecha de expiración
     } catch (error) {
-      console.error("Error al decodificar el token:", error);
+      
       return true; // Si hay un error, asumimos que el token es inválido
     }
   };

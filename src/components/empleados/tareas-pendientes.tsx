@@ -34,10 +34,10 @@ function TareasPendientes() {
       const data = await apiService.get(
         `https://sp-backend-production.up.railway.app/misactividades/${decoded.idMiembroEquipo}`
       );
-      console.log(data);
+      
       setTareas(data);
     } catch (error) {
-      console.error("Error al obtener las tareas:", error);
+      
     }
   };
 

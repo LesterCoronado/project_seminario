@@ -41,7 +41,7 @@ function ListarErrores() {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    console.log(isAuthenticated);
+    
     return <div>No tienes acceso a este contenido.</div>;
   }
   const params = useParams();
@@ -87,7 +87,7 @@ function ListarErrores() {
       setErrores(errores.filter((error) => error.idError !== IdError));
       Show_Alerta("Error eliminado correctamente", "success");
     } catch (error) {
-      console.error("Error al eliminar la error:", error);
+      
       Show_Alerta("Error al eliminar la error", "error");
     }
   };
@@ -100,7 +100,7 @@ function ListarErrores() {
       setErrores(data);
     } catch (error) {
       setError("Error al obtener las errores.");
-      console.error("Error al obtener las errores:", error);
+      
     } finally {
       setLoading(false);
     }
@@ -155,7 +155,7 @@ function ListarErrores() {
         return log; // Devuelve el log tal cual si no es base64
       }
     } catch (error) {
-      console.error("Error al decodificar el log:", error);
+      
       return "Error al decodificar el log.";
     }
   };

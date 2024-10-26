@@ -14,7 +14,7 @@ export const apiService = {
       const response = await axios.post(baseURL, body);
       return response.data;
     } catch (error) {
-      console.error("Error al hacer la petición:", error);
+      
       throw error;
     }
   },
@@ -24,7 +24,7 @@ export const apiService = {
       // Eliminar la cookie de token
       Cookies.remove("token");
     } catch (error) {
-      console.error("Error al cerrar sesión:", error);
+      
       throw error;
     }
   },
@@ -40,7 +40,7 @@ export const apiService = {
       });
       return response.data;
     } catch (error) {
-      console.error("Error al hacer la petición:", error);
+      
       throw error;
     }
   },
@@ -54,7 +54,7 @@ export const apiService = {
       });
       return response.data;
     } catch (error) {
-      console.error("Error al hacer la petición:", error);
+      
       throw error;
     }
   },
@@ -68,7 +68,7 @@ export const apiService = {
       });
       return response.data;
     } catch (error) {
-      console.error("Error al hacer la petición:", error);
+      
       throw error;
     }
   },
@@ -84,7 +84,7 @@ export const apiService = {
         );
       return response.data;
     } catch (error) {
-      console.error("Error al hacer la petición:", error);
+      
       throw error;
     }
   },
@@ -98,7 +98,7 @@ export const apiService = {
       });
       return response.data;
     } catch (error) {
-      console.error("Error al hacer la petición:", error);
+      
       throw error;
     }
   },
@@ -107,7 +107,7 @@ export const apiService = {
       const response = await axios.post(baseURL, data);
       return response.data;
     } catch (error) {
-      console.error("Error al hacer la petición:", error);
+      
       throw error;
     }
   },

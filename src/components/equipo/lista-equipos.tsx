@@ -43,7 +43,7 @@ function ListarEquipos() {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    console.log(isAuthenticated);
+    
     return <div>No tienes acceso a este contenido.</div>;
   }
   const params = useParams();
@@ -101,7 +101,7 @@ function ListarEquipos() {
       setEquipos(equipos.filter((equipo) => equipo.idEquipo !== IdEquipo));
       Show_Alerta("Equipo eliminado correctamente", "success");
     } catch (error) {
-      console.error("Error al eliminar el equipo:", error);
+      
       Show_Alerta(
         "Error al eliminar el equipo, compruebe que no tenga miembros asignados o intentelo nuevamente",
         "error"
@@ -124,10 +124,10 @@ function ListarEquipos() {
       }));
 
       setEquipos(equiposFormateados);
-      console.log(equiposFormateados); // Para revisar cómo queda la estructura
+       // Para revisar cómo queda la estructura
     } catch (error) {
       setEquipo("Error al obtener los equipos.");
-      console.error("Error al obtener los equipos:", error);
+      
     } finally {
       setLoading(false);
     }

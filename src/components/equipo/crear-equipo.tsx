@@ -65,7 +65,7 @@ const CrearEquipo = (props: any) => {
     }
 
     try {
-      console.log("Form data:", dataToSubmit);
+      
       const endpoint =
         props.IdEquipo === 0 ? "equipos" : `equipos/${props.IdEquipo}`;
       const method = props.IdEquipo === 0 ? apiService.post : apiService.update;
@@ -74,14 +74,14 @@ const CrearEquipo = (props: any) => {
         dataToSubmit
       );
 
-      console.log("Respuesta del servidor:", response);
+      
       notificationService.sendEquipo(true);
       Show_Alerta(
         `Error ${props.IdEquipo === 0 ? "creado" : "editado"} con éxito`,
         "success"
       );
     } catch (error) {
-      console.error("Error al enviar datos:", error);
+      
       alert(
         `Hubo un error al ${
           props.IdEquipo === 0 ? "crear" : "editar"
@@ -96,7 +96,7 @@ const CrearEquipo = (props: any) => {
       const data: Equipo = await apiService.get(
         `https://sp-backend-production.up.railway.app/equipo/${props.IdEquipo}`
       );
-      console.log("Equipo:", data);
+      
 
       setFormData({
         ...formData,
@@ -107,7 +107,7 @@ const CrearEquipo = (props: any) => {
         estado: data.estado,
       });
     } catch (error) {
-      console.error("Error al obtener el error:", error);
+      
     }
   };
   const fetchAreaTrabajo = async () => {
@@ -116,7 +116,7 @@ const CrearEquipo = (props: any) => {
 
       setAreaTrabajo(data);
     } catch (error) {
-      console.error("Error al obtener las áreas de trabajo:", error);
+      
     }
   };
 

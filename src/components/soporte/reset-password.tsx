@@ -78,7 +78,7 @@ function ResetPassword() {
             "Comprueba tu conexión a internet e intenta de nuevo"
           );
         } else {
-          console.error("Error occurred during reset password:", error);
+          
         }
       }
     }

@@ -86,9 +86,9 @@ function Informes() {
       }
 
       setInforme(data);
-      console.log("Informes obtenidos:", data);
+      
     } catch (error) {
-      console.error("Error al obtener los errores:", error);
+      
       // Establece valores por defecto en caso de error
       setInforme({
         errores: [{
@@ -111,7 +111,7 @@ function Informes() {
         }],
       });
     } finally {
-      console.log("Petición de errores finalizada");
+      
     }
   };
 

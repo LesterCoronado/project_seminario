@@ -121,7 +121,7 @@ const CrearError = (props: any) => {
  
 
     try {
-      console.log("Form data:", dataToSubmit);
+      
       const endpoint =
         props.IdError === 0 ? "errores" : `errores/${props.IdError}`;
       const method = props.IdError === 0 ? apiService.post : apiService.update;
@@ -130,15 +130,15 @@ const CrearError = (props: any) => {
         dataToSubmit
       );
 
-      console.log("Respuesta del servidor:", response);
+      
       notificationService.sendError(true);
       Show_Alerta(
         `Error ${props.IdError === 0 ? "creado" : "editado"} con éxito`,
         "success"
       );
     } catch (error) {
-      console.log("Form data1:", dataToSubmit);
-      console.error("Error al enviar datos:", error);
+      
+      
       alert(
         `Hubo un error al ${props.IdError === 0 ? "crear" : "editar"} el error.`
       );
@@ -151,7 +151,7 @@ const CrearError = (props: any) => {
       const data: Error = await apiService.get(
         `https://sp-backend-production.up.railway.app/error/${props.IdError}`
       );
-      console.log("Prueba:", data);
+      
 
       setFormData({
         ...formData,
@@ -172,7 +172,7 @@ const CrearError = (props: any) => {
         setPreviewImage(data.evidencia);
       }
     } catch (error) {
-      console.error("Error al obtener el error:", error);
+      
     }
   };
   // Función para obtener los miembros de los equipos del proyecto
@@ -193,7 +193,7 @@ const CrearError = (props: any) => {
       });
       setMiembros(miembrosList);
     } catch (error) {
-      console.error("Error al obtener los miembros del equipo:", error);
+      
     }
   };
   const fetchPruebas = async () => {
@@ -203,7 +203,7 @@ const CrearError = (props: any) => {
       );
       setPruebas(data);
     } catch (error) {
-      console.error("Error al obtener las pruebas:", error);
+      
     }
   };
 

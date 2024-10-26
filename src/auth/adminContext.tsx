@@ -19,7 +19,7 @@ export const AuthAdminProvider: React.FC<{ children: React.ReactNode }> = ({ chi
 
     if (!isExpired) {
       const decodedToken: any = jwtDecode(token); // Decodifica el token
-      console.log("decodedTokenJWT:", decodedToken.idRol);
+      
       if (decodedToken.idRol == 1) { // Verifica si es ADMIN
         setIsAuthenticated(true); // Si el rol es 1 (ADMIN), autenticar
       } else {
@@ -41,13 +41,13 @@ export const AuthAdminProvider: React.FC<{ children: React.ReactNode }> = ({ chi
 
       // Verificar si decoded.exp está definido
       if (decoded.exp === undefined) {
-        console.warn("El token no contiene la propiedad exp.");
+        
         return true; // Asumimos que el token es inválido si no hay exp
       }
 
       return decoded.exp < currentTime; // Compara la fecha de expiración
     } catch (error) {
-      console.error("Error al decodificar el token:", error);
+      
       return true; // Si hay un error, asumimos que el token es inválido
     }
   };

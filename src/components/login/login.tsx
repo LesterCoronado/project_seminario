@@ -34,18 +34,18 @@ function Login() {
         email: email,
         password: password,
       };
-      console.log("json:", json); 
+       
       try {
         const data = await apiService.login(
           `https://sp-backend-production.up.railway.app/login`,
           json
         );
-        console.log("Data:", data);
+        
 
         if (data.token) {
           const decoded: any = jwtDecode(data.token); // Decodifica el token
-          console.log("decoded", decoded);
-          console.log("idRol", decoded.idRol);
+          
+          
           // Guarda el token en cookies
           const options: any = {
             expires: 1 / 24, // 1 hora
@@ -60,7 +60,7 @@ function Login() {
           }
 
           notificationService.sendLogin(true);
-          console.log("Login successful!", data.token);
+          
         } else {
         }
       } catch (error: any) {
@@ -84,7 +84,7 @@ function Login() {
             detail: "Ocurrio un error, intentelo de nuevo",
           });
         }
-        console.error("Error occurred during login:", error);
+        
       }
     }
   };
@@ -92,15 +92,15 @@ function Login() {
     setLoader(true);
 
     const json = { email: value };
-    console.log("email:", value);
-    console.log("json:", json);
+    
+    
 
     try {
       const data = await apiService.forgotPwd(
         `https://sp-backend-production.up.railway.app/forgot-password`,
         json
       );
-      console.log("Data:", data);
+      
       showToast(
         "success",
         "Éxito",
@@ -108,7 +108,7 @@ function Login() {
       );
       setVisible(false);
     } catch (error) {
-      console.error("Error occurred during password reset:", error);
+      
       handleError(error);
     } finally {
       setLoader(false);

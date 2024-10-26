@@ -44,7 +44,7 @@ export const AsignarRecurso = (props: any) => {
       );
       setProyectos(data);
     } catch (error) {
-      console.error("Error al obtener los proyectos:", error);
+      
     }
   };
 
@@ -55,7 +55,7 @@ export const AsignarRecurso = (props: any) => {
       );
       setEquipos(data);
     } catch (error) {
-      console.error("Error al obtener los equipos:", error);
+      
     }
   };
 
@@ -78,7 +78,7 @@ export const AsignarRecurso = (props: any) => {
         "https://sp-backend-production.up.railway.app/equipo-proyecto",
         finalData
       );
-      console.log("Respuesta del servidor:", response);
+      
       notificationService.sendAsignacionRecurso(true);
       Show_Alerta("Recurso asignado con éxito", "success");
     } catch (error: any) {
@@ -102,7 +102,7 @@ export const AsignarRecurso = (props: any) => {
         const response = await apiService.delete(
           `https://sp-backend-production.up.railway.app/equipo-proyecto/${idEquipo}/${idProyecto}`
         );
-        console.log("Respuesta del servidor:", response);
+        
         Show_Alerta("Recurso desasignado con éxito", "success");
         notificationService.sendAsignacionRecurso(true);
       } catch (error: any) {
@@ -112,7 +112,7 @@ export const AsignarRecurso = (props: any) => {
         ) {
           Show_Alerta("No se encontró la asignación para eliminar", "info");
         } else {
-          console.error("Error al desasignar el recurso:", error);
+          
         }
       }
     }

@@ -7,6 +7,7 @@ import { notificationService } from "../../services/notificaciones";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../auth/adminContext.tsx";
 import "./inicio.css";
+
 interface Proyecto {
   idProyecto: number;
   Nombre: string;
@@ -22,24 +23,39 @@ interface Proyecto {
 
 function Inicio() {
   const { isAuthenticated } = useAuth();
-
-  if (!isAuthenticated) {
-    console.log(isAuthenticated);
-    return <div>No tienes acceso a este contenido.</div>;
-  }
   const navigate = useNavigate();
   const [proyectos, setProyectos] = useState<Proyecto[]>([]);
 
-  const fetchProyectos = async () => {
-    try {
-      const data: Proyecto[] = await apiService.get(
-        "https://sp-backend-production.up.railway.app/proyectos"
-      );
-      setProyectos(data);
-    } catch (error) {
-      console.error("Error al obtener los proyectos:", error);
-    }
-  };
+  // Verificar la autenticación antes de hacer fetch de proyectos
+  useEffect(() => {
+    const fetchProyectos = async () => {
+      if (!isAuthenticated) return; // Salir si no está autenticado
+
+      try {
+        const data: Proyecto[] = await apiService.get(
+          "https://sp-backend-production.up.railway.app/proyectos"
+        );
+        setProyectos(data);
+      } catch (error) {
+        
+      }
+    };
+
+    const subscription = notificationService.getNotification().subscribe(() => {
+      fetchProyectos();
+    });
+
+    fetchProyectos();
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [isAuthenticated]); // Dependencia en isAuthenticated
+
+  // Si no está autenticado, retorna el mensaje
+  if (!isAuthenticated) {
+    return <div>No tienes acceso a este contenido.</div>;
+  }
 
   const responsiveOptions: CarouselResponsiveOption[] = [
     {
@@ -98,19 +114,6 @@ function Inicio() {
       </div>
     );
   };
-
-  useEffect(() => {
-    const subscription = notificationService.getNotification().subscribe(() => {
-      fetchProyectos();
-    });
-
-    fetchProyectos();
-
-    // Limpieza del efecto
-    return () => {
-      subscription.unsubscribe();
-    };
-  }, []);
 
   return (
     <div className="content">

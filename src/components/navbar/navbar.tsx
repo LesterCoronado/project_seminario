@@ -43,7 +43,7 @@ const NavbarComponent = () => {
       );
       setProyectos(data);
     } catch (error) {
-      console.error("Error al obtener los proyectos:", error);
+      
     }
   };
 
@@ -61,7 +61,7 @@ const NavbarComponent = () => {
 
       fetchProyectos(); // Actualizar la lista de proyectos después del login
     } catch (error) {
-      console.error("Error al decodificar el token:", error);
+      
       setIsAuthenticated(false);
     }
   };

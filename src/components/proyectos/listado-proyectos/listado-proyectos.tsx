@@ -87,7 +87,7 @@ function Proyectos() {
   function deleteProyecto() {
     if (projectIdToDelete !== null) {
       apiService
-        .delete(`http://localhost:4000/proyectos/${projectIdToDelete}`)
+        .delete(`https://sp-backend-production.up.railway.app/proyectos/${projectIdToDelete}`)
         .then((response) => {
           Show_Alerta("Proyecto eliminado", "success");
           fetchProyectos(); // Actualiza la lista de proyectos después de eliminar
@@ -105,7 +105,7 @@ function Proyectos() {
   const fetchProyectos = async () => {
     try {
       const data: Proyecto[] = await apiService.get(
-        "http://localhost:4000/proyectos"
+        "https://sp-backend-production.up.railway.app/proyectos"
       );
       setProyectos(data);
       // Inicializar la animación de la barra de progreso para cada proyecto
@@ -122,7 +122,7 @@ function Proyectos() {
     setEquipos([]);
     try {
       const data: Equipo[] = await apiService.get(
-        `http://localhost:4000/equipo-proyecto/${id}`
+        `https://sp-backend-production.up.railway.app/equipo-proyecto/${id}`
       );
       setEquipos(data);
       console.log(data);

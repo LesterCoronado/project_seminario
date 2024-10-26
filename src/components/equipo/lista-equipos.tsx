@@ -97,7 +97,7 @@ function ListarEquipos() {
 
   const deleteEquipo = async (IdEquipo: number) => {
     try {
-      await apiService.delete(`http://localhost:4000/equipos/${IdEquipo}`);
+      await apiService.delete(`https://sp-backend-production.up.railway.app/equipos/${IdEquipo}`);
       setEquipos(equipos.filter((equipo) => equipo.idEquipo !== IdEquipo));
       Show_Alerta("Equipo eliminado correctamente", "success");
     } catch (error) {
@@ -111,7 +111,7 @@ function ListarEquipos() {
 
   const fetchEquipos = async () => {
     try {
-      const data = await apiService.get(`http://localhost:4000/equipos`);
+      const data = await apiService.get(`https://sp-backend-production.up.railway.app/equipos`);
 
       // Verificar si la data contiene un array y mapear los equipos
       const equiposFormateados = data.map((item: any) => ({

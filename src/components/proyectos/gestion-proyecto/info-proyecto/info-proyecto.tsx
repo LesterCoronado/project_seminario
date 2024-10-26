@@ -62,7 +62,7 @@ export const InfoProyecto = () => {
   const fetchProyecto = async () => {
     try {
       const data: Proyecto = await apiService.get(
-        `http://localhost:4000/proyectos/${params.id}`
+        `https://sp-backend-production.up.railway.app/proyectos/${params.id}`
       );
       setFormData(data);
       sessionStorage.setItem("project", data.Nombre);
@@ -75,7 +75,7 @@ export const InfoProyecto = () => {
     setEquipos([]);
     try {
       const data: Equipo[] = await apiService.get(
-        `http://localhost:4000/equipo-proyecto/${id}`
+        `https://sp-backend-production.up.railway.app/equipo-proyecto/${id}`
       );
       setEquipos(data);
     } catch (error) {

@@ -32,7 +32,7 @@ function TareasPendientes() {
     const decoded: any = jwtDecode(token); // Decodifica el token
     try {
       const data = await apiService.get(
-        `http://localhost:4000/misactividades/${decoded.idMiembroEquipo}`
+        `https://sp-backend-production.up.railway.app/misactividades/${decoded.idMiembroEquipo}`
       );
       console.log(data);
       setTareas(data);

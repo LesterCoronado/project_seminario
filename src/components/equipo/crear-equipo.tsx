@@ -70,7 +70,7 @@ const CrearEquipo = (props: any) => {
         props.IdEquipo === 0 ? "equipos" : `equipos/${props.IdEquipo}`;
       const method = props.IdEquipo === 0 ? apiService.post : apiService.update;
       const response = await method(
-        `http://localhost:4000/${endpoint}`,
+        `https://sp-backend-production.up.railway.app/${endpoint}`,
         dataToSubmit
       );
 
@@ -94,7 +94,7 @@ const CrearEquipo = (props: any) => {
   const fetchEquipoById = async () => {
     try {
       const data: Equipo = await apiService.get(
-        `http://localhost:4000/equipo/${props.IdEquipo}`
+        `https://sp-backend-production.up.railway.app/equipo/${props.IdEquipo}`
       );
       console.log("Equipo:", data);
 
@@ -112,7 +112,7 @@ const CrearEquipo = (props: any) => {
   };
   const fetchAreaTrabajo = async () => {
     try {
-      const data = await apiService.get(`http://localhost:4000/areaTrabajo`);
+      const data = await apiService.get(`https://sp-backend-production.up.railway.app/areaTrabajo`);
 
       setAreaTrabajo(data);
     } catch (error) {

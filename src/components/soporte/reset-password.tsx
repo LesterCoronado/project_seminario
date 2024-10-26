@@ -56,7 +56,7 @@ function ResetPassword() {
       try {
         let token: any = params.token;
         const data = await apiService.resetpwd(
-          `http://localhost:4000/reset-password`,
+          `https://sp-backend-production.up.railway.app/reset-password`,
           json,
           token
         );

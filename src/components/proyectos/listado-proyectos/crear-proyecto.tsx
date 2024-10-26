@@ -28,7 +28,7 @@ export const CrearProyectos = (props: any) => {
   const fetchProyectos = async () => {
     try {
       const data: Proyecto = await apiService.get(
-        `http://localhost:4000/proyectos/${props.idProyecto}`
+        `https://sp-backend-production.up.railway.app/proyectos/${props.idProyecto}`
       );
       console.log("Proyecto:", data);
 
@@ -59,7 +59,7 @@ export const CrearProyectos = (props: any) => {
   const fetchClientes = async () => {
     try {
       const data: Cliente[] = await apiService.get(
-        "http://localhost:4000/clientes"
+        "https://sp-backend-production.up.railway.app/clientes"
       );
       setClientes(data);
     } catch (error) {
@@ -117,7 +117,7 @@ export const CrearProyectos = (props: any) => {
     if (props.idProyecto === 0) {
       try {
         const response = await apiService.post(
-          "http://localhost:4000/proyectos",
+          "https://sp-backend-production.up.railway.app/proyectos",
           finalData
         );
         console.log("Respuesta del servidor:", response);
@@ -130,7 +130,7 @@ export const CrearProyectos = (props: any) => {
     } else {
       try {
         const response = await apiService.update(
-          `http://localhost:4000/proyectos/${props.idProyecto}`,
+          `https://sp-backend-production.up.railway.app/proyectos/${props.idProyecto}`,
           finalData
         );
         console.log("Respuesta del servidor:", response);

@@ -33,7 +33,7 @@ function Inicio() {
   const fetchProyectos = async () => {
     try {
       const data: Proyecto[] = await apiService.get(
-        "http://localhost:4000/proyectos"
+        "https://sp-backend-production.up.railway.app/proyectos"
       );
       setProyectos(data);
     } catch (error) {

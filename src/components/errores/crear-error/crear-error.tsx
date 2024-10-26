@@ -126,7 +126,7 @@ const CrearError = (props: any) => {
         props.IdError === 0 ? "errores" : `errores/${props.IdError}`;
       const method = props.IdError === 0 ? apiService.post : apiService.update;
       const response = await method(
-        `http://localhost:4000/${endpoint}`,
+        `https://sp-backend-production.up.railway.app/${endpoint}`,
         dataToSubmit
       );
 
@@ -149,7 +149,7 @@ const CrearError = (props: any) => {
   const fetchErrorById = async () => {
     try {
       const data: Error = await apiService.get(
-        `http://localhost:4000/error/${props.IdError}`
+        `https://sp-backend-production.up.railway.app/error/${props.IdError}`
       );
       console.log("Prueba:", data);
 
@@ -179,7 +179,7 @@ const CrearError = (props: any) => {
   const fetchMiembrosEquipos = async () => {
     try {
       const data = await apiService.get(
-        `http://localhost:4000/equipo-proyecto/${_idProyecto}`
+        `https://sp-backend-production.up.railway.app/equipo-proyecto/${_idProyecto}`
       );
       const miembrosList: Miembro[] = [];
       data.forEach((equipo: any) => {
@@ -199,7 +199,7 @@ const CrearError = (props: any) => {
   const fetchPruebas = async () => {
     try {
       const data = await apiService.get(
-        `http://localhost:4000/pruebas/${_idProyecto}`
+        `https://sp-backend-production.up.railway.app/pruebas/${_idProyecto}`
       );
       setPruebas(data);
     } catch (error) {

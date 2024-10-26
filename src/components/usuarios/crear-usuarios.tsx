@@ -83,7 +83,7 @@ const CrearUsuario = (props: any) => {
       const method =
         props.IdUsuario === 0 ? apiService.post : apiService.update;
       const response = await method(
-        `http://localhost:4000/${endpoint}`,
+        `https://sp-backend-production.up.railway.app/${endpoint}`,
         dataToSubmit
       );
 
@@ -107,7 +107,7 @@ const CrearUsuario = (props: any) => {
   };
   const fetchRoles = async () => {
     try {
-      const data = await apiService.get(`http://localhost:4000/roles`);
+      const data = await apiService.get(`https://sp-backend-production.up.railway.app/roles`);
       setRoles(data);
       console.log("Roles:", data);
     } catch (error) {
@@ -118,7 +118,7 @@ const CrearUsuario = (props: any) => {
     console.log("Id del cliente2:", props);
     try {
       const data: Usuario = await apiService.get(
-        `http://localhost:4000/user/${props.IdUsuario}`
+        `https://sp-backend-production.up.railway.app/user/${props.IdUsuario}`
       );
       console.log("Usuario:", data);
       setFormData({

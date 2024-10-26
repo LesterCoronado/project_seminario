@@ -40,7 +40,7 @@ export const AsignarRecurso = (props: any) => {
   const fetchProyectos = async () => {
     try {
       const data: Proyecto[] = await apiService.get(
-        `http://localhost:4000/proyectos`
+        `https://sp-backend-production.up.railway.app/proyectos`
       );
       setProyectos(data);
     } catch (error) {
@@ -51,7 +51,7 @@ export const AsignarRecurso = (props: any) => {
   const fetchEquipos = async () => {
     try {
       const data: Equipo[] = await apiService.get(
-        "http://localhost:4000/equipos"
+        "https://sp-backend-production.up.railway.app/equipos"
       );
       setEquipos(data);
     } catch (error) {
@@ -75,7 +75,7 @@ export const AsignarRecurso = (props: any) => {
 
     try {
       const response = await apiService.post(
-        "http://localhost:4000/equipo-proyecto",
+        "https://sp-backend-production.up.railway.app/equipo-proyecto",
         finalData
       );
       console.log("Respuesta del servidor:", response);
@@ -100,7 +100,7 @@ export const AsignarRecurso = (props: any) => {
     } else {
       try {
         const response = await apiService.delete(
-          `http://localhost:4000/equipo-proyecto/${idEquipo}/${idProyecto}`
+          `https://sp-backend-production.up.railway.app/equipo-proyecto/${idEquipo}/${idProyecto}`
         );
         console.log("Respuesta del servidor:", response);
         Show_Alerta("Recurso desasignado con éxito", "success");

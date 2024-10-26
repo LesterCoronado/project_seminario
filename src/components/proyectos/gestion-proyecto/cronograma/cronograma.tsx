@@ -88,7 +88,7 @@ export const Cronograma = () => {
 
   const deleteActividad = async (id: string) => {
     try {
-      await apiService.delete(`http://localhost:4000/actividad/${id}`);
+      await apiService.delete(`https://sp-backend-production.up.railway.app/actividad/${id}`);
       fetchHitos(); // Volver a obtener las tareas
       Show_Alerta("Actividad eliminada con éxito", "success");
     } catch (error) {
@@ -104,7 +104,7 @@ export const Cronograma = () => {
   const fetchHitos = async () => {
     try {
       const data: Actividades[] = await apiService.get(
-        `http://localhost:4000/actividades/${params.id}`
+        `https://sp-backend-production.up.railway.app/actividades/${params.id}`
       );
 
       setActividades(data);

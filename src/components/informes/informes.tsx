@@ -57,7 +57,7 @@ function Informes() {
   const fetchInformes = async () => {
     try {
       const data: Informe = await apiService.get(
-        `http://localhost:4000/informe/${params.id}`
+        `https://sp-backend-production.up.railway.app/informe/${params.id}`
       );
 
       // Si no hay datos, establece valores por defecto

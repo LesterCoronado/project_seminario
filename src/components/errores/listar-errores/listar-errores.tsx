@@ -83,7 +83,7 @@ function ListarErrores() {
 
   const deleteError = async (IdError: number) => {
     try {
-      await apiService.delete(`http://localhost:4000/error/${IdError}`);
+      await apiService.delete(`https://sp-backend-production.up.railway.app/error/${IdError}`);
       setErrores(errores.filter((error) => error.idError !== IdError));
       Show_Alerta("Error eliminado correctamente", "success");
     } catch (error) {
@@ -95,7 +95,7 @@ function ListarErrores() {
   const fetchErrores = async () => {
     try {
       const data: Errores[] = await apiService.get(
-        `http://localhost:4000/errores/${params.id}`
+        `https://sp-backend-production.up.railway.app/errores/${params.id}`
       );
       setErrores(data);
     } catch (error) {

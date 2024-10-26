@@ -40,7 +40,7 @@ export const AsignarMiembros = (props: any) => {
   const fetchEquipos = async () => {
     try {
       const data: Equipo[] = await apiService.get(
-        `http://localhost:4000/equipos`
+        `https://sp-backend-production.up.railway.app/equipos`
       );
       setEquipos(data);
     } catch (error) {
@@ -51,7 +51,7 @@ export const AsignarMiembros = (props: any) => {
   const fetchUsuarios = async () => {
     try {
       const data: Usuario[] = await apiService.get(
-        "http://localhost:4000/usuarios"
+        "https://sp-backend-production.up.railway.app/usuarios"
       );
       setUsuarios(data);
     } catch (error) {
@@ -76,7 +76,7 @@ export const AsignarMiembros = (props: any) => {
 
     try {
       const response = await apiService.post(
-        "http://localhost:4000/miembroequipo",
+        "https://sp-backend-production.up.railway.app/miembroequipo",
         finalData
       );
       console.log("Respuesta del servidor:", response);
@@ -101,7 +101,7 @@ export const AsignarMiembros = (props: any) => {
     } else {
       try {
         const response = await apiService.delete(
-          `http://localhost:4000/miembroequipo/${idEquipo}/${idUsuario}`
+          `https://sp-backend-production.up.railway.app/miembroequipo/${idEquipo}/${idUsuario}`
         );
         console.log("Respuesta del servidor:", response);
         Show_Alerta("Usuario desasignado con éxito", "success");

@@ -85,7 +85,7 @@ function ListarPruebas() {
 
   const deletePrueba = async (idPrueba: number) => {
     try {
-      await apiService.delete(`http://localhost:4000/pruebas/${idPrueba}`);
+      await apiService.delete(`https://sp-backend-production.up.railway.app/pruebas/${idPrueba}`);
       setPruebas(pruebas.filter((prueba) => prueba.idPrueba !== idPrueba));
       Show_Alerta("Prueba eliminada correctamente", "success");
     } catch (error) {
@@ -97,7 +97,7 @@ function ListarPruebas() {
   const fetchPruebas = async () => {
     try {
       const data: Pruebas[] = await apiService.get(
-        `http://localhost:4000/pruebas/${params.id}`
+        `https://sp-backend-production.up.railway.app/pruebas/${params.id}`
       );
       setPruebas(data);
     } catch (error) {

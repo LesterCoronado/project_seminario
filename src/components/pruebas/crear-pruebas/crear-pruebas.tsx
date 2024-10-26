@@ -140,7 +140,7 @@ export const CrearPrueba = (props: any) => {
         console.log("Form data:", dataToSubmit);
         const endpoint = props.idPrueba === 0 ? "pruebas" : `pruebas/${props.idPrueba}`;
         const method = props.idPrueba === 0 ? apiService.post : apiService.update;
-        const response = await method(`http://localhost:4000/${endpoint}`, dataToSubmit);
+        const response = await method(`https://sp-backend-production.up.railway.app/${endpoint}`, dataToSubmit);
 
         console.log("Respuesta del servidor:", response);
         notificationService.sendPrueba(true);
@@ -156,7 +156,7 @@ export const CrearPrueba = (props: any) => {
   const fetchPruebaById = async () => {
     try {
       const data: Prueba = await apiService.get(
-        `http://localhost:4000/prueba/${props.idPrueba}`
+        `https://sp-backend-production.up.railway.app/prueba/${props.idPrueba}`
       );
       console.log("Prueba:", data);
 

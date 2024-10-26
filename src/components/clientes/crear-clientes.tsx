@@ -69,7 +69,7 @@ const CrearCliente = (props: any) => {
       const method =
         props.IdCliente === 0 ? apiService.post : apiService.update;
       const response = await method(
-        `http://localhost:4000/${endpoint}`,
+        `https://sp-backend-production.up.railway.app/${endpoint}`,
         dataToSubmit
       );
 
@@ -94,7 +94,7 @@ const CrearCliente = (props: any) => {
     console.log("Id del cliente2:", props);
     try {
       const data: Cliente = await apiService.get(
-        `http://localhost:4000/cliente/${props.IdCliente}`
+        `https://sp-backend-production.up.railway.app/cliente/${props.IdCliente}`
       );
       console.log("Cliente:", data);
 
@@ -162,10 +162,15 @@ const CrearCliente = (props: any) => {
               <option disabled selected value="">
                 Seleccione...
               </option>
-              <option value="Peru">Peru</option>
-              <option value="Colombia">Colombia</option>
-              <option value="Argentina">Argentina</option>
-              <option value="Chile">Chile</option>
+              <option value="Guatemala">Guatemala</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Estados Unidos">Estados Unidos</option>
+              <option value="Belice">Belice</option>
+              <option value="El Salvador">El Salvador</option>
+              <option value="Honduras">Honduras</option>
+              <option value="Nicaragua">Nicaragua</option>
+              <option value="Costa Rica">Costa Rica</option>
+              <option value="Panama">Panama</option>
             </Form.Select>
           </Form.Group>
           <Form.Group as={Col} md="6" controlId="direccion">

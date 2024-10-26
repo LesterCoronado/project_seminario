@@ -85,7 +85,7 @@ function ListarUsuarios() {
 
   const deleteUsuario = async (IdUsuario: number) => {
     try {
-      await apiService.delete(`http://localhost:4000/deleteuser/${IdUsuario}`);
+      await apiService.delete(`https://sp-backend-production.up.railway.app/deleteuser/${IdUsuario}`);
       setUsuarios(
         usuarios.filter((usuario) => usuario.idUsuario !== IdUsuario)
       );
@@ -101,7 +101,7 @@ function ListarUsuarios() {
 
   const fetchUsuarios = async () => {
     try {
-      const data = await apiService.get(`http://localhost:4000/allusers`);
+      const data = await apiService.get(`https://sp-backend-production.up.railway.app/allusers`);
       setUsuarios(data);
       console.log("usuarios:", data);
     } catch (error) {

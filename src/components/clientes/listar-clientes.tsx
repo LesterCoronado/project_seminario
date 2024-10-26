@@ -87,7 +87,7 @@ function ListarClientes() {
 
   const deleteCliente = async (IdCliente: number) => {
     try {
-      await apiService.delete(`http://localhost:4000/clientes/${IdCliente}`);
+      await apiService.delete(`https://sp-backend-production.up.railway.app/clientes/${IdCliente}`);
       setClientes(
         clientes.filter((cliente) => cliente.idCliente !== IdCliente)
       );
@@ -103,7 +103,7 @@ function ListarClientes() {
 
   const fetchClientes = async () => {
     try {
-      const data = await apiService.get(`http://localhost:4000/clientes`);
+      const data = await apiService.get(`https://sp-backend-production.up.railway.app/clientes`);
       setClientes(data);
       console.log("Clientes:", data);
     } catch (error) {

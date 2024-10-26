@@ -53,7 +53,7 @@ export const CrearActividad = (props: any) => {
   const fetchActividades = async () => {
     try {
       const data: Actividad[] = await apiService.get(
-        `http://localhost:4000/actividades/${idProyecto}`
+        `https://sp-backend-production.up.railway.app/actividades/${idProyecto}`
       );
       setActividades(data);
     } catch (error) {
@@ -67,7 +67,7 @@ export const CrearActividad = (props: any) => {
   const fetchActividad = async () => {
     try {
       const data: Actividad = await apiService.get(
-        `http://localhost:4000/actividad/${props.idActividad}`
+        `https://sp-backend-production.up.railway.app/actividad/${props.idActividad}`
       );
       console.log("Actividad:", data);
       setFormData({
@@ -107,7 +107,7 @@ export const CrearActividad = (props: any) => {
     if (props.idActividad == 0) {
       try {
         const response = await apiService.post(
-          "http://localhost:4000/actividades",
+          "https://sp-backend-production.up.railway.app/actividades",
           finalData
         );
         notificationService.sendActividad(true);
@@ -123,7 +123,7 @@ export const CrearActividad = (props: any) => {
     } else {
       try {
         const response = await apiService.update(
-          `http://localhost:4000/actividad/${props.idActividad}`,
+          `https://sp-backend-production.up.railway.app/actividad/${props.idActividad}`,
           finalData
         );
         notificationService.sendActividad(true);
@@ -144,7 +144,7 @@ export const CrearActividad = (props: any) => {
   const fetchMiembrosEquipos = async () => {
     try {
       const data = await apiService.get(
-        `http://localhost:4000/equipo-proyecto/${idProyecto}`
+        `https://sp-backend-production.up.railway.app/equipo-proyecto/${idProyecto}`
       );
       const miembrosList: Miembro[] = [];
       data.forEach((equipo: any) => {

@@ -79,7 +79,7 @@ function ErroresAsignados() {
 
   const deleteError = async (IdError: number) => {
     try {
-      await apiService.delete(`http://localhost:4000/error/${IdError}`);
+      await apiService.delete(`https://sp-backend-production.up.railway.app/error/${IdError}`);
       setErrores(errores.filter((error) => error.idError !== IdError));
       Show_Alerta("Error eliminado correctamente", "success");
     } catch (error) {
@@ -91,7 +91,7 @@ function ErroresAsignados() {
   const fetchErrores = async () => {
     try {
       const data: Errores[] = await apiService.get(
-        `http://localhost:4000/miserrores/${IdResponsable}`
+        `https://sp-backend-production.up.railway.app/miserrores/${IdResponsable}`
       );
       setErrores(data);
     } catch (error) {

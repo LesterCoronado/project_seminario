@@ -37,7 +37,7 @@ function Login() {
       console.log("json:", json); 
       try {
         const data = await apiService.login(
-          `http://localhost:4000/login`,
+          `https://sp-backend-production.up.railway.app/login`,
           json
         );
         console.log("Data:", data);
@@ -97,7 +97,7 @@ function Login() {
 
     try {
       const data = await apiService.forgotPwd(
-        `http://localhost:4000/forgot-password`,
+        `https://sp-backend-production.up.railway.app/forgot-password`,
         json
       );
       console.log("Data:", data);
